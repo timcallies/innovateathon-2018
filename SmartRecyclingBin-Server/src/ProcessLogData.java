@@ -1,4 +1,3 @@
-
 import java.util.Iterator;
 
 public class ProcessLogData
@@ -20,7 +19,7 @@ public class ProcessLogData
                 if (prevLog==null)
                 {
                     //First entry in the array, contains admin's swipe
-                    thisLog=prevLog;
+                    prevLog=thisLog;
                 }
                 else
                 {

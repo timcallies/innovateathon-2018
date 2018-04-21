@@ -1,3 +1,5 @@
+
+
 import java.io.File;
 import java.io.Serializable;
 import java.util.Iterator;
@@ -5,7 +7,7 @@ import java.util.LinkedList;
 
 public class RecyclingLog implements Serializable
 {
-    static final int ADMIN_ID=0;
+    public static final int ADMIN_ID=0;
     
     private File logFile;
     private static final long serialVersionUID = 1;
@@ -29,6 +31,19 @@ public class RecyclingLog implements Serializable
     public LogEntry addEntry(double currentWeight, int userID)
     {
         return addEntry(new LogEntry(currentWeight, userID));
+    }
+    
+    public String toString()
+    {
+        StringBuilder str= new StringBuilder("User \tWeight\tTime\n");
+        for (LogEntry thisEntry : logData)
+        {
+            str.append(String.format("%05d\t", thisEntry.getUserID()));
+            str.append(String.format("%05g\t", thisEntry.getCurrentWeight()));
+            str.append(thisEntry.getDateOfEntry().toString());
+            str.append("\n");
+        }
+        return str.toString();
     }
     
     public Iterator<LogEntry> getIterator()

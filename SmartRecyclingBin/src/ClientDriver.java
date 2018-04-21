@@ -10,15 +10,15 @@ public class ClientDriver
     {
         boolean doLoop=true;
         
-        RecyclingLog log=new RecyclingLog("testlog.log");
+        RecyclingLog log=new RecyclingLog("C:/Users/timca/Desktop/testlog.log");
         while(doLoop)
         {
             try
             {
-                int thisUserID=Integer.parseInt(JOptionPane.showInputDialog(
-                        "Type in the ID of the user"));
                 double thisWeight=Double.parseDouble(JOptionPane.showInputDialog(
                         "Type in the weight in the recycling bin"));
+                int thisUserID=Integer.parseInt(JOptionPane.showInputDialog(
+                        "Type in the ID of the user"));
 
                 if(thisUserID==RecyclingLog.ADMIN_ID)
                 {
@@ -31,6 +31,7 @@ public class ClientDriver
             }
             catch(NumberFormatException nfe){}
         }
+        System.out.println(log);
         
         //Write the log to a file
         FileOutputStream fout = new FileOutputStream(log.getLogFile());

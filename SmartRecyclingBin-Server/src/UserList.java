@@ -1,10 +1,14 @@
+
+
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class UserList
+public class UserList implements Serializable
 {
+    private static final long serialVersionUID = 1;
     private HashMap<Integer,UserData> userMap;
     
-    private UserList()
+    public UserList()
     {
         userMap = new HashMap<Integer,UserData>();
     }
@@ -30,6 +34,19 @@ public class UserList
         
         userMap.get(userID).removeBalance(loss);
     }    
+    
+    public String toString()
+    {
+        StringBuilder str=new StringBuilder("User \tBalance\tWeight\n");
+        for(int thisID : userMap.keySet())
+        {
+            str.append(String.format("%05d\t", thisID));
+            str.append(String.format("%05g\t", userMap.get(thisID).currentBalance));
+            str.append(String.format("%05g", userMap.get(thisID).totalWeight));
+            str.append("\n");
+        }
+        return str.toString();
+    }
     
     private class UserData
     {

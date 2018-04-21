@@ -1,3 +1,5 @@
+
+
 public class InvalidWeightException extends Exception {
 
     /**
