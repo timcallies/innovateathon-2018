@@ -22,7 +22,7 @@ public class ServerDriver
                 ObjectInputStream oin = new ObjectInputStream(fin);
                 list=(UserList)oin.readObject();
             }
-            catch(IOException ioe){list = new UserList();}
+            catch(IOException ioe){list = new UserList();ioe.printStackTrace();}
             catch(ClassNotFoundException cnfe){list = new UserList();}
         }
         

@@ -48,8 +48,9 @@ public class UserList implements Serializable
         return str.toString();
     }
     
-    private class UserData
+    private class UserData implements Serializable
     {
+        private static final long serialVersionUID = 1;
         public double totalWeight;
         public double currentBalance;
         
