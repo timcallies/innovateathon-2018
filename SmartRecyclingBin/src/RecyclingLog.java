@@ -1,22 +1,28 @@
-public class RecyclingLog
-{
-  private File logFile;
-  /*
-  logFile: The file where all of the information will be stored
-  */
-}
+import java.io.File;
+import java.io.Serializable;
+import java.util.LinkedList;
 
-public RecyclingLog(String logFile)
+public class RecyclingLog implements Serializable
 {
-  this.logFile=new File(logFile);
-}
+    private File logFile;
+    private static final long serialVersionUID = 1;
+    private LinkedList<LogEntry> logData;
+    /*
+    logFile: The file where all of the information will be stored
+    */
+    public RecyclingLog(String logAddress)
+    {
+        logData = new LinkedList();
+    }
 
-public LogEntry addEntry(LogEntry thisEntry)
-{
+    public LogEntry addEntry(LogEntry thisEntry)
+    {
+        logData.add(thisEntry);
+        return thisEntry;
+    }
 
-}
-
-public LogEntry addEntry(double currentWeight, int userID)
-{
-  return this.addEntry(new LogEntry(double currentWeight, int userID));
+    public LogEntry addEntry(double currentWeight, int userID)
+    {
+        return addEntry(new LogEntry(currentWeight, userID));
+    }
 }
