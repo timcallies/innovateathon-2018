@@ -35,11 +35,11 @@ public class RecyclingLog implements Serializable
     
     public String toString()
     {
-        StringBuilder str= new StringBuilder("User \tWeight\tTime\n");
+        StringBuilder str= new StringBuilder("User----Weight----Time\n");
         for (LogEntry thisEntry : logData)
         {
-            str.append(String.format("%05d\t", thisEntry.getUserID()));
-            str.append(String.format("%05g\t", thisEntry.getCurrentWeight()));
+            str.append(String.format("%05d--", thisEntry.getUserID()));
+            str.append(String.format("%05g--", thisEntry.getCurrentWeight()));
             str.append(thisEntry.getDateOfEntry().toString());
             str.append("\n");
         }

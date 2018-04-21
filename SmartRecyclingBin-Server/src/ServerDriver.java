@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Iterator;
+import javax.swing.JOptionPane;
 
 public class ServerDriver
 {
@@ -40,6 +41,7 @@ public class ServerDriver
             
             
             ProcessLogData.processData(list, log);
+            JOptionPane.showMessageDialog(null,list.toString());  
             System.out.println(list);
             
             //Writes the database to a file

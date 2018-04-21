@@ -32,7 +32,7 @@ public class ClientDriver
             catch(NumberFormatException nfe){}
         }
         System.out.println(log);
-        
+        JOptionPane.showMessageDialog(null,log.toString());        
         //Write the log to a file
         FileOutputStream fout = new FileOutputStream(log.getLogFile());
         ObjectOutputStream oout = new ObjectOutputStream(fout);

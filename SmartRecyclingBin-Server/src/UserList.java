@@ -37,11 +37,11 @@ public class UserList implements Serializable
     
     public String toString()
     {
-        StringBuilder str=new StringBuilder("User \tBalance\tWeight\n");
+        StringBuilder str=new StringBuilder("User----Balance----Weight\n");
         for(int thisID : userMap.keySet())
         {
-            str.append(String.format("%05d\t", thisID));
-            str.append(String.format("%05g\t", userMap.get(thisID).currentBalance));
+            str.append(String.format("%05d--", thisID));
+            str.append(String.format("%05g--", userMap.get(thisID).currentBalance));
             str.append(String.format("%05g", userMap.get(thisID).totalWeight));
             str.append("\n");
         }
