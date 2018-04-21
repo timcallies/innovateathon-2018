@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class RecyclingLog implements Serializable
@@ -24,5 +25,10 @@ public class RecyclingLog implements Serializable
     public LogEntry addEntry(double currentWeight, int userID)
     {
         return addEntry(new LogEntry(currentWeight, userID));
+    }
+    
+    public Iterator<LogEntry> getIterator()
+    {
+        return logData.iterator();
     }
 }
