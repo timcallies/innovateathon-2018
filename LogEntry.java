@@ -1,25 +1,26 @@
 import java.util.Date;
 
-public class LogEntry
+public class LogEntry implements Serializable
 {
   private double currentWeight;
-  private int UserID;
+  private int userID;
   private Date dateOfEntry;
+  private static final long serialVersionUID = 1;
   /*
   currentWeight: The weight of the machine when the user swipes their card.
-  UserID: The value on the user's identification card.
+  userID: The value on the user's identification card.
   dateOfEntry: The date when an entry was made.
   */
-  public LogEntry(double currentWeight, int UserID)
+  public LogEntry(double currentWeight, int userID)
   {
-    this.UserID=UserID;
+    this.userID=userID;
     this.currentWeight=currentWeight;
     dateOfEntry=new Date();
   }
 
   public int getUserID()
   {
-    return UserID;
+    return userID;
   }
 
   public double getCurrentWeight()
